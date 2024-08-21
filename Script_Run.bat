@@ -23,10 +23,13 @@ echo A backup and/or System Restore point is recommended.
 echo [Y] Remove Windows Defender Antivirus + Disable All Security Mitigations
 echo [A] Remove Windows Defender only
 echo [S] Disable All Security Mitigations
-choice /C:yas /N
-if errorlevel==3 goto disablemitigations
-if errorlevel==2 goto removeantivirus
-if errorlevel==1 goto removedef
+:: Skipping user input
+goto disablemitigations
+
+::choice /C:yas /N
+::if errorlevel==3 goto disablemitigations
+::if errorlevel==2 goto removeantivirus
+::if errorlevel==1 goto removedef
 :--------------------------------------
 
 
